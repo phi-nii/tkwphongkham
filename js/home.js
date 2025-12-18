@@ -12,15 +12,12 @@ $(document).ready(function() {
     // Kiểm tra xem trang có slider không (để tránh lỗi nếu dùng file này cho trang khác)
     if (totalSlides > 0) {
         
-        // Hàm hiển thị slide cụ thể
-        function showSlide(index) {
-            // Ẩn tất cả slide (dùng hiệu ứng fadeOut của jQuery)
-            slides.fadeOut(500).removeClass('active');
-            
-            // Hiện slide mới (eq(index) để lấy slide tại vị trí index)
-            slides.eq(index).fadeIn(500).addClass('active');
-            currentSlide = index; 
-        }
+function showSlide(index) {
+    slides.removeClass('active');
+    slides.eq(index).addClass('active');
+    currentSlide = index;
+}
+
 
         // Hàm bắt đầu chạy tự động
         function startAutoSlide() {
@@ -54,8 +51,9 @@ $(document).ready(function() {
         });
 
         // Khởi tạo trạng thái ban đầu
-        slides.hide(); // Ẩn hết trước
-        slides.eq(0).show().addClass('active'); // Hiện slide đầu
+slides.removeClass('active');
+slides.eq(0).addClass('active');
+
         startAutoSlide();
     }
 
