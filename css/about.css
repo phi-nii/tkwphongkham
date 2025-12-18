@@ -107,7 +107,7 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid #E64A19; /* Điểm nhấn màu cam trên đầu thẻ */
+    border-top: 4px solid #E64A19; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -161,7 +161,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap');
 
-/* 1. THIẾT LẬP CƠ BẢN & MÀU SẮC CHỦ ĐẠO (Nha Khoa) */
+/* 1. THIẾT LẬP CƠ BẢN & MÀU SẮC CHỦ ĐẠO */
 
 body {
   margin: 0;
@@ -169,13 +169,10 @@ body {
   background: #f8f8f8;
 }
 
-/* Màu Chính: Xanh Nước Biển (Y tế) */
 h2, h3, .core-value .title, .achievement-item .number, .achievements-title, 
 .origin .text-box h2, .origin .text-box h3 {
   color: #0056b3; 
 }
-
-/* Màu Accent: Xanh Cyan/Teal (Thẩm mỹ) */
 .btn, .core-value .title-wrapper .icon, .center-line::before, .center-line .dot, 
 .achievement-item i, .slide-wrapper .overlay-box .box-title,
 .core-value .title-wrapper .icon, .center-line::before, .center-line .dot {
@@ -185,7 +182,6 @@ h2, h3, .core-value .title, .achievement-item .number, .achievements-title,
     border-color: #E64A19;
 }
 
-/* Màu nền Section 2 (Xanh Y tế đậm) */
 .service {
   background: #0056b3; 
 }
@@ -201,30 +197,30 @@ h2, h3, .core-value .title, .achievement-item .number, .achievements-title,
 
 
 .section .text-box {
-  width: 50%; /* Giữ 50% */
+  width: 50%;
   padding: 60px;
-  box-sizing: border-box; /* Quan trọng để padding không phá vỡ 50% */
+  box-sizing: border-box; 
 }
 
 .image-box {
   position: relative;
-  width: 50%; /* Giữ 50% */
+  width: 50%; 
   height: 100%;
    max-height: 550px;
   overflow: hidden;
 }
 
-/* Loại bỏ hiệu ứng Fade cho SECTION 1 (origin) */
+/* Loại bỏ hiệu ứng Fade cho SECTION 1 */
 .image-box::before {
-  content: none; /* Xóa hiệu ứng fade trắng */
+  content: none; 
 }
 
-/* Loại bỏ hiệu ứng Fade cho SECTION 2 (service) */
+/* Loại bỏ hiệu ứng Fade cho SECTION 2  */
 .image-box.right-fade::before {
-  content: none; /* Xóa hiệu ứng fade xanh */
+  content: none; 
 }
 
-/* CSS cho SECTION 2 (Nền Xanh đậm) - Vẫn giữ nguyên màu chữ */
+/* CSS cho SECTION 2 */
 .service .text-box h2, .service .text-box h3 {
     color: white !important;
 }
@@ -257,7 +253,7 @@ color: white !important;
 .btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 1.5px solid #E64A19; /* Viền Accent */
+  border: 1.5px solid #E64A19; 
   border-radius: 5px;
   font-size: 14px;
   text-decoration: none;
@@ -273,7 +269,7 @@ color: white !important;
   border-color: #E64A19;
 }
 
-/* --- GIÁ TRỊ CỐT LÕI (TIMELINE) --- */
+/* GIÁ TRỊ CỐT LÕI (TIMELINE) */
 .core-value {
     width: 100%;
     max-width: 1500px;
@@ -379,20 +375,18 @@ color: white !important;
 
 
 
-/* --- HIỆU ỨNG HOVER CHO ẢNH & CHỮ (Giữ nguyên logic) --- */
+/* --- HIỆU ỨNG HOVER CHO ẢNH & CHỮ --- */
 .content-img { position: relative; overflow: hidden; border-radius: 12px; cursor: pointer; padding: 0; height: 330px; }
 .content-img .img-wrapper { width: 100%; height: 100%; transform: scale(1); transition: transform 0.4s ease-out; }
 .content-img .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 .content-img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); border-radius: inherit; transition: background 0.4s ease-out; pointer-events: none; z-index: 2; }
 .content-img:hover .img-wrapper { transform: scale(1.1); }
 .content-img:hover::after { background: rgba(0,0,0,0.3); }
-
-/* Hover tiêu đề đổi màu accent */
 .origin .text-box h2:hover, .achievements-title:hover, .core-value .title:hover {
     color: #458f9a !important; 
 }
 .service .text-box h2:hover {
-    color: #458f9a !important; /* Màu Accent trên nền Xanh đậm */
+    color: #458f9a !important; 
 }
 
 /* Responsive cơ bản */
