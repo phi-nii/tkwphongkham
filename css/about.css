@@ -1,0 +1,414 @@
+/* --- STYLE CHO TRANG ABOUT --- */
+
+/* Intro */
+.about-intro {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+}
+.about-intro p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Đội ngũ bác sĩ */
+.team { margin-bottom: 60px; }
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.doctor-item {
+    display: flex;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.doctor-item:hover { transform: translateY(-5px); }
+
+.doctor-img-wrapper {
+    flex: 0 0 250px;
+    overflow: hidden; /* Quan trọng: Giữ ảnh không bị tràn ra ngoài khi phóng to */
+}
+
+.doctor-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* --- THÊM DÒNG NÀY ĐỂ TẠO CHUYỂN ĐỘNG MƯỢT --- */
+    transition: transform 0.5s ease;
+}
+
+/* --- THÊM ĐOẠN NÀY ĐỂ KHI DI CHUỘT VÀO THÌ ẢNH PHÓNG TO --- */
+.doctor-item:hover .doctor-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.doctor-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.doctor-info h3 { color: #0056b3; margin-bottom: 5px; font-size: 1.4rem; }
+.doctor-info .role {
+    color: #E64A19;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+.doctor-info .desc { color: #555; line-height: 1.6; text-align: justify; }
+
+/* --- STYLE MỚI: ĐÁNH GIÁ KHÁCH HÀNG (TESTIMONIALS) --- */
+.testimonials {
+    background-color: #f0f8ff; /* Nền xanh rất nhạt để tách biệt */
+    padding: 60px 0;
+    margin-bottom: 0; /* Sát footer */
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #E64A19; /* Điểm nhấn màu cam trên đầu thẻ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stars {
+    color: #f1c40f; /* Màu vàng ngôi sao */
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.customer-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #0056b3; /* Viền ảnh màu xanh chủ đạo */
+}
+
+.customer-info h4 {
+    color: #0056b3;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.customer-info span {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .doctor-item { flex-direction: column; }
+    .doctor-img-wrapper { height: 300px; width: 100%; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ======================== */
+/* 1. THIẾT LẬP CƠ BẢN & MÀU SẮC CHỦ ĐẠO (Nha Khoa) */
+/* ======================== */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f8f8f8; /* Nền xám nhạt */
+}
+
+/* Màu Chính: Xanh Nước Biển (Y tế) */
+h2, h3, .core-value .title, .achievement-item .number, .achievements-title, 
+.origin .text-box h2, .origin .text-box h3 {
+  color: #0056b3; 
+}
+
+/* Màu Accent: Xanh Cyan/Teal (Thẩm mỹ) */
+.btn, .core-value .title-wrapper .icon, .center-line::before, .center-line .dot, 
+.achievement-item i, .slide-wrapper .overlay-box .box-title,
+.core-value .title-wrapper .icon, .center-line::before, .center-line .dot {
+  color: #E64A19;
+}
+.btn {
+    border-color: #E64A19;
+}
+
+/* Màu nền Section 2 (Xanh Y tế đậm) */
+.service {
+  background: #0056b3; 
+}
+
+/* ---- SECTION 1 & 2 LAYOUT ---- */
+.section { 
+  display: flex;
+  align-items: stretch; /* QUAN TRỌNG */
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+
+.section .text-box {
+  width: 50%; /* Giữ 50% */
+  padding: 60px;
+  box-sizing: border-box; /* Quan trọng để padding không phá vỡ 50% */
+}
+
+.image-box {
+  position: relative;
+  width: 50%; /* Giữ 50% */
+  height: 100%;
+   max-height: 550px;
+  overflow: hidden;
+}
+
+/* Loại bỏ hiệu ứng Fade cho SECTION 1 (origin) */
+.image-box::before {
+  content: none; /* Xóa hiệu ứng fade trắng */
+}
+
+/* Loại bỏ hiệu ứng Fade cho SECTION 2 (service) */
+.image-box.right-fade::before {
+  content: none; /* Xóa hiệu ứng fade xanh */
+}
+
+/* CSS cho SECTION 2 (Nền Xanh đậm) - Vẫn giữ nguyên màu chữ */
+.service .text-box h2, .service .text-box h3 {
+    color: white !important;
+}
+/* ... giữ nguyên các đoạn CSS khác ... */
+
+/* ---- TEXT ---- */
+h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-size: 23px;
+  margin-bottom: 20px;
+  font-weight: 600;
+   font-family: 'Roboto', sans-serif;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.white-text {
+color: white !important; 
+}
+
+  /* ---- BUTTON ---- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 1.5px solid #E64A19; /* Viền Accent */
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #E64A19;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out; 
+}
+
+/* HIỆU ỨNG HOVER CHO NÚT */
+.btn:hover {
+  background-color: #E64A19; /* Nền Accent */
+  color: #ffffff !important; 
+  border-color: #E64A19;
+}
+
+/* --- GIÁ TRỊ CỐT LÕI (TIMELINE) --- */
+.core-value {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 140px 0;
+    
+}
+.title-wrapper {
+  display: flex;
+  justify-content: center;   /* căn giữa toàn khối */
+  align-items: center;       /* căn giữa trục dọc */
+  gap: 16px;
+  margin-bottom: 50px;
+  width: 100%;               /* CHÌA KHÓA */
+}
+
+
+.section-title {
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.title-wrapper .icon {
+  font-size: 56px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.core-value .title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.content-text {
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.content-left h3, .content-left p {
+    text-align: right;
+    
+}
+
+.content-text h3, .content-text p {
+    text-align: left;
+}
+.core-value h3 {
+    text-align: left !important;
+}
+
+.core-value p {
+    text-align: justify;
+    text-align-last: left;
+}
+
+/* ------ LINE + DOT ------- */
+.center-line {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.center-line::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background: #0056b3;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-line .dot {
+    width: 26px;
+    height: 26px;
+    background: #fff;
+    border: 4px solid #458f9a;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+
+
+/* --- HIỆU ỨNG HOVER CHO ẢNH & CHỮ (Giữ nguyên logic) --- */
+.content-img { position: relative; overflow: hidden; border-radius: 12px; cursor: pointer; padding: 0; height: 330px; }
+.content-img .img-wrapper { width: 100%; height: 100%; transform: scale(1); transition: transform 0.4s ease-out; }
+.content-img .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.content-img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0); border-radius: inherit; transition: background 0.4s ease-out; pointer-events: none; z-index: 2; }
+.content-img:hover .img-wrapper { transform: scale(1.1); }
+.content-img:hover::after { background: rgba(0,0,0,0.3); }
+
+/* Hover tiêu đề đổi màu accent */
+.origin .text-box h2:hover, .achievements-title:hover, .core-value .title:hover {
+    color: #458f9a !important; 
+}
+.service .text-box h2:hover {
+    color: #458f9a !important; /* Màu Accent trên nền Xanh đậm */
+}
+
+/* Responsive cơ bản */
+@media (max-width: 992px) {
+    .section {
+        flex-direction: column;
+        height: auto;
+    }
+    .section .text-box, .image-box {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .image-box {
+        height: 350px;
+    }
+    .image-box::before {
+        width: 100%;
+        background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+        height: 80px;
+    }
+    .image-box.right-fade::before {
+        left: 0;
+        transform: none;
+        background: linear-gradient(to top, rgba(0, 123, 255, 1) 0%, rgba(0, 123, 255, 0) 100%);
+        height: 80px;
+    }
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+    .center-line {
+        display: none;
+    }
+    .content-text {
+        padding: 0 10px;
+    }
+    .achievement-list {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
