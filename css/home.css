@@ -28,7 +28,6 @@
     filter: brightness(0.8); 
 }
 
-/* Vùng chứa nội dung (Caption) */
 .caption {
     position: absolute; 
     top: 50%; 
@@ -55,7 +54,6 @@
     text-align: center; 
     padding: 40px 0;
 }
-/* Tiêu đề chính */
 .caption-title {
     font-size: 56px;
     font-weight: 800;
@@ -65,7 +63,6 @@
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-/* Tiêu đề phụ */
 .caption-subtitle {
     font-size: 20px;
     font-weight: 400;
@@ -75,7 +72,6 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Nút CTA trong Banner */
 .btn-banner-cta {
     display: inline-block;
     background-color: #0056b3; 
@@ -89,7 +85,6 @@
     background-color: #E64A19;
 }
 
-/* Nút điều khiển (mũi tên) */
 .prev-btn, .next-btn {
     position: absolute; 
     top: 50%; 
@@ -107,7 +102,6 @@
 .prev-btn { left: 0; }
 .prev-btn:hover, .next-btn:hover { background: rgba(0,0,0,0.8); }
 
-/* Responsive cho màn hình nhỏ */
 @media (max-width: 768px) {
     .caption-title { 
         font-size: 36px; 
@@ -116,8 +110,7 @@
         font-size: 16px; 
     }
 }
-/* 2.1 LAYOUT NỀN TRẮNG (ACCENT) & 1 CỘT */
-/* Thiết lập cơ bản */
+/* 2.1 LAYOUT NỀN TRẮNG */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -161,7 +154,7 @@ body {
     position: relative;
     overflow: hidden;
     padding-top: 133.33%; 
-  
+}
 
 .doctor-image {
     position: absolute;
@@ -174,7 +167,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* HIỆU ỨNG: Hover Zoom */
 .doctor-card:hover .doctor-image {
     transform: scale(1.05);
 }
@@ -229,7 +221,6 @@ body {
     transform: translateX(-50%) translateY(-5px); 
 }
 
-/* Phần Nút Hành Động */
 .action-buttons {
     display: flex;
     justify-content: center;
@@ -251,7 +242,6 @@ body {
     transition: transform 0.2s;
 }
 
-/* Nút chính (Đặt lịch hẹn) */
 .primary-btn {
     background-color:  #0056b3; 
     color: white;
@@ -263,7 +253,6 @@ body {
     border-color:  #0056b3;
 }
 
-/* Nút phụ (Tất cả bác sĩ) */
 .secondary-btn {
     background-color: white;
     color:  #0056b3;
@@ -275,12 +264,10 @@ body {
     color: #0056b3;
 }
 
-/* Hiệu ứng mũi tên dịch chuyển khi hover */
 .btn:hover i {
     transform: translateX(3px);
 }
 
-/* Style cho Tiêu đề và Đoạn văn */
 .welcome-text-header {
     text-align: center; 
     padding-top: 50px; 
@@ -305,7 +292,7 @@ body {
     max-width: 1200%;
     margin: 0 auto;
     overflow: hidden; 
-
+}
 .welcome-banner-image {
     width: 100%; 
     height: 300px; 
@@ -396,7 +383,6 @@ body {
     }
 }
 
-/* Nút Xem Chi Tiết Đội Ngũ */
 .btn-doctor-detail {
     display: inline-block;
     border: 2px solid #0056b3; 
@@ -413,8 +399,6 @@ body {
     color: white;
 }
 
-
-/* --- Dịch Vụ & Khuyến Mãi (Nền TRẮNG, 1 Cột) --- */
 .section-services-highlight, .section-promo {
     background-color: white; 
     padding: 60px 0;
@@ -464,7 +448,7 @@ body {
     color: #ee7f6d; 
 }
 
-/* Nút Đặt Lịch Ngay (Accent Coral) */
+/* Nút Đặt Lịch Ngay */
 .btn-book-now {
     display: inline-block;
     background: #ee7f6d; 
@@ -483,7 +467,7 @@ body {
     border: 2px solid #ee7f6d;
 }
 
-/* 2. DỊCH VỤ NỔI BẬT (SERVICES) */
+/* 2. DỊCH VỤ NỔI BẬT */
 .service-item i,
 .service-item svg {
     font-size: 3rem;
