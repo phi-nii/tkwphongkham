@@ -1,15 +1,11 @@
 $(document).ready(function() {
-    /* ========================================== */
-    /* 1. LOGIC CHO BANNER SLIDESHOW (jQuery)     */
-    /* ========================================== */
-    
+//slide show     
     // Lấy danh sách các slide
     const slides = $('.slide');
     const totalSlides = slides.length;
     let currentSlide = 0;
     let autoSlideInterval;
 
-    // Kiểm tra xem trang có slider không (để tránh lỗi nếu dùng file này cho trang khác)
     if (totalSlides > 0) {
         
 function showSlide(index) {
@@ -28,7 +24,7 @@ function showSlide(index) {
                 // Tăng index, nếu hết thì quay về 0
                 let nextSlide = (currentSlide + 1) % totalSlides;
                 showSlide(nextSlide);
-            }, 6000); // 4000ms = 8 giây chuyển 1 lần
+            }, 6000); // 6000ms = 6 giây chuyển 1 lần
         }
 
         // --- XỬ LÝ SỰ KIỆN CLICK NÚT ---
@@ -57,9 +53,8 @@ slides.eq(0).addClass('active');
         startAutoSlide();
     }
 
-    /* ========================================== */
-    /* 2. HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION)  */
-    /* ========================================== */
+    // 2. HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION) 
+
     $(window).scroll(function() {
         // Tính vị trí cuộn hiện tại + chiều cao cửa sổ - 1 khoảng offset
         var scrollPos = $(window).scrollTop() + $(window).height() - 150; 
@@ -73,7 +68,7 @@ slides.eq(0).addClass('active');
         });
     });
 });
-// Dữ liệu chi tiết cho từng bác sĩ (Đã được cập nhật dữ liệu Nha khoa cho BS Thuận)
+// Dữ liệu chi tiết cho từng bác sĩ 
 const doctorsData = {
     'thuan': {
         name: 'BS.CKII. Trần Văn Thuận',
@@ -164,7 +159,6 @@ $(document).ready(function() {
     }
 
     // Hàm mở Modal Bác sĩ
-    // *Lưu ý: Hàm này vẫn giữ nguyên tên để tương thích với onclick="openDoctorModal('id')" trong HTML
     window.openDoctorModal = function(doctorId) {
         const doctor = doctorsData[doctorId];
         
@@ -187,13 +181,11 @@ $(document).ready(function() {
     }
 
     // Hàm đóng Modal Bác sĩ
-    // *Lưu ý: Hàm này vẫn giữ nguyên tên để tương thích với onclick="closeDoctorModal()" trong HTML
     window.closeDoctorModal = function() {
         $doctorModal.removeClass('show'); // Xóa class 'show'
         $('body').css('overflow', 'auto'); 
     }
 
-    // Đóng Modal khi click vào nút đóng (đã được xử lý bằng onclick trong HTML)
     
     // Đóng Modal khi click ra ngoài (trên overlay) - Sử dụng event delegation
     $doctorModal.on('click', function(event) {
