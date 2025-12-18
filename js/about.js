@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Trang Giới Thiệu đã tải thành công!");
     
-    // Nếu muốn thêm hiệu ứng xuất hiện dần (Fade In) cho danh sách bác sĩ
+    // Thêm hiệu ứng xuất hiện dần (Fade In) cho danh sách bác sĩ
     const doctorItems = document.querySelectorAll('.doctor-item');
     
     doctorItems.forEach((item, index) => {
