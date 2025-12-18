@@ -1,7 +1,6 @@
-/* ================================================== */
-/* 1. RESET & BASIC SETUP                             */
-/* ================================================== */
-* {
+
+/* 1. RESET & BASIC SETUP  */
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,16 +26,13 @@ img {
     display: block;
 }
 
-/* Container giới hạn chiều rộng */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ================================================== */
-/* 2. TYPOGRAPHY & COLORS                             */
-/* ================================================== */
+/* 2. TYPOGRAPHY & COLORS */
 h1, h2, h3, h4 {
     color: #0056b3; 
     font-weight: 700;
@@ -63,9 +59,7 @@ h1, h2, h3, h4 {
     transform: translateX(-50%);
 }
 
-/* ================================================== */
-/* 3. BUTTON STYLES                                   */
-/* ================================================== */
+/* 3. BUTTON STYLES */
 .btn-main {
     display: inline-block;
     background-color: #e64a19;
@@ -99,14 +93,9 @@ h1, h2, h3, h4 {
     background-color: #0056b3;
     color: white;
 }
-
-/* ================================================== */
-/* 4. HEADER CHUYÊN NGHIỆP (ĐÃ CẬP NHẬT)              */
-/* ================================================== */
-
-/* 4.1. TOP BAR (Thanh thông tin trên cùng) */
+/* 4. HEADER CHUYÊN NGHIỆP*/
 .top-bar {
-    background-color: #0056b3; /* Màu xanh chủ đạo */
+    background-color: #0056b3; 
     color: #fff;
     padding: 10px 0;
     font-size: 0.9rem;
@@ -131,17 +120,17 @@ h1, h2, h3, h4 {
 }
 
 .top-info i {
-    color: #E64A19; /* Icon màu cam nổi bật */
+    color: #E64A19; 
 }
 
-/* 4.2. MAIN HEADER (Logo & Menu) */
+/* 4.2. MAIN HEADER  */
 header {
     background: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Bóng đổ nhẹ sang trọng */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0; /* Reset padding để Top bar khít */
+    padding: 0; 
 }
 
 .navbar-inner {
@@ -151,7 +140,6 @@ header {
     padding: 15px 0;
 }
 
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -168,7 +156,7 @@ header {
 }
 
 .logo span {
-    color: #E64A19; /* Chữ Care màu cam */
+    color: #E64A19; 
 }
 
 /* Menu */
@@ -216,7 +204,7 @@ nav ul li a.active {
 /* Nút Đặt Lịch (CTA Button) trên Header */
 .btn-header-booking {
     background-color: #E64A19;
-    color: #fff !important; /* Bắt buộc chữ trắng */
+    color: #fff !important; 
     padding: 10px 25px;
     border-radius: 50px;
     font-weight: bold;
@@ -224,7 +212,6 @@ nav ul li a.active {
     font-size: 0.9rem;
     box-shadow: 0 4px 10px rgba(230, 74, 25, 0.3);
     transition: transform 0.3s, background-color 0.3s;
-    /* Hiệu ứng nhịp tim */
     animation: pulse-orange 2s infinite;
 }
 
@@ -233,9 +220,9 @@ nav ul li a.active {
     transform: translateY(-2px);
     color: #fff;
 }
-.btn-header-booking::after { display: none; } /* Tắt gạch chân cho nút này */
+.btn-header-booking::after { display: none; } 
 
-/* Animation Nhịp Tim */
+/* Animation */
 @keyframes pulse-orange {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 74, 25, 0.7); }
     70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(230, 74, 25, 0); }
@@ -250,9 +237,7 @@ nav ul li a.active {
     .btn-header-booking { display: none; }
 }
 
-/* ================================================== */
-/* 5. FOOTER (MÀU XANH #0056b3 GIỐNG HEADER)          */
-/* ================================================== */
+/* 5. FOOTER   */
 
 .main-footer {
     background-color: #0056b3; 
