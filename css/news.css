@@ -1,19 +1,18 @@
 
 
-/* --- 1. CẤU HÌNH & BIẾN MÀU --- */
+/* --- 1. CẤU HÌNH & MÀU --- */
 :root {
-    --primary-blue: #0056b3;   /* Xanh dương chủ đạo */
-    --accent-orange: #E64A19;  /* Cam điểm nhấn */
+    --primary-blue: #0056b3;   
+    --accent-orange: #E64A19;
     --text-color: #333;
     --bg-light: #f9f9f9;
 }
 
-/* Reset lại container để tránh xung đột với style cũ */
 main.container {
     padding: 40px 15px;
     max-width: 1140px;
     margin: 0 auto;
-    min-height: 500px; /* Đảm bảo chiều cao tối thiểu để không bị cụt */
+    min-height: 500px; 
 }
 
 /* Tiêu đề trang Tin Tức */
@@ -34,37 +33,32 @@ main.container {
 /* --- 2. LAYOUT DANH SÁCH BÀI VIẾT --- */
 .news-list {
     display: flex;
-    flex-direction: column; /* Xếp dọc từ trên xuống */
-    gap: 30px; /* Khoảng cách giữa các bài */
+    flex-direction: column; 
+    gap: 30px; 
 }
 
-/* --- 3. STYLE TỪNG BÀI VIẾT (QUAN TRỌNG) --- */
+/* --- 3. STYLE TỪNG BÀI VIẾT  --- */
 .news-item {
-    display: flex; /* Flexbox: Ảnh trái - Nội dung phải */
+    display: flex; 
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ rõ hơn */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     border: 1px solid #e0e0e0;
-    
-    /* --- SỬA LỖI TRẮNG TRANG TẠI ĐÂY --- */
-    /* Đã xóa opacity: 0 -> Để nội dung luôn hiện */
     opacity: 1 !important; 
     transform: none !important;
     visibility: visible !important;
-    
-    /* Giữ hiệu ứng khi di chuột vào */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .news-item:hover {
-    transform: translateY(-5px) !important; /* Nổi lên khi hover */
+    transform: translateY(-5px) !important; 
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 /* Cột Ảnh (Bên trái) */
 .news-thumb-wrapper {
-    flex: 0 0 300px; /* Cố định chiều rộng ảnh là 300px */
+    flex: 0 0 300px;
     position: relative;
     overflow: hidden;
     border-right: 1px solid #eee;
@@ -73,23 +67,23 @@ main.container {
 .news-thumb {
     width: 100%;
     height: 100%;
-    min-height: 220px; /* Đảm bảo ảnh có chiều cao */
+    min-height: 220px;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
 }
 
 .news-item:hover .news-thumb {
-    transform: scale(1.05); /* Zoom ảnh nhẹ khi hover */
+    transform: scale(1.05); 
 }
 
 /* Cột Nội dung (Bên phải) */
 .news-content {
-    flex: 1; /* Chiếm hết phần còn lại */
+    flex: 1; 
     padding: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    justify-content: center; 
 }
 
 /* Tiêu đề bài viết */
@@ -131,7 +125,6 @@ main.container {
     color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 20px;
-    /* Cắt dòng nếu quá dài (tối đa 3 dòng) */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -157,14 +150,14 @@ main.container {
 /* --- 4. RESPONSIVE (MOBILE) --- */
 @media (max-width: 768px) {
     .news-item {
-        flex-direction: column; /* Chuyển thành dọc: Ảnh trên - Chữ dưới */
+        flex-direction: column; 
         height: auto;
     }
 
     .news-thumb-wrapper {
         flex: none;
         width: 100%;
-        height: 200px; /* Cố định chiều cao ảnh trên mobile */
+        height: 200px; 
         border-right: none;
         border-bottom: 1px solid #eee;
     }
