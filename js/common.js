@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Nội dung HTML của Footer Chuyên nghiệp
+    // Nội dung HTML của Footer 
     const footerContent = `
     <div class="container">
         <div class="footer-top">
@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
     `;
 
-    // Tìm thẻ có id="main-footer" và chèn nội dung vào
+    
     const footerElement = document.getElementById('main-footer');
     if (footerElement) {
         footerElement.innerHTML = footerContent;
-        footerElement.classList.add('main-footer'); // Thêm class để nhận CSS
+        footerElement.classList.add('main-footer'); 
     }
 });
