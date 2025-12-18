@@ -2,7 +2,7 @@
 const serviceData = {
     "whitening": {
         title: "Tẩy Trắng Răng Công Nghệ Laser",
-        img: "images/service1.jpg",
+        img: "https://i.postimg.cc/Ss7jZC4R/close-up-perfect-smile.jpg",
         desc: `
             <p>Công nghệ tẩy trắng răng Laser Whitening là giải pháp tiên tiến nhất hiện nay, giúp đánh bật các vết ố vàng lâu năm chỉ sau 60 phút.</p>
             <br>
@@ -16,7 +16,7 @@ const serviceData = {
     },
     "braces": {
         title: "Niềng Răng Thẩm Mỹ",
-        img: "images/service2.jpg",
+        img: "https://i.postimg.cc/NFFY1HjH/smiling-young-woman-with-braces-teeth.jpg",
         desc: `
             <p>Chúng tôi cung cấp đa dạng các giải pháp chỉnh nha phù hợp với nhu cầu và tài chính của từng khách hàng.</p>
             <br>
@@ -30,7 +30,7 @@ const serviceData = {
     },
     "implant": {
         title: "Cấy Ghép Implant Thụy Sĩ",
-        img: "images/service3.jpg",
+        img: "https://i.postimg.cc/859DmCJB/15064.jpg",
         desc: `
             <p>Giải pháp phục hình răng đã mất hoàn hảo nhất, cấu trúc gồm trụ Titanium tích hợp xương và mão sứ bên trên.</p>
             <br>
@@ -40,7 +40,7 @@ const serviceData = {
     },
     "kids": {
         title: "Nha Khoa Trẻ Em",
-        img: "images/service4.jpg",
+        img: "https://i.postimg.cc/rFL2V3SW/kid-portrait-holding-paper-icon.jpg",
         desc: `
             <p>Dịch vụ chuyên biệt dành cho bé với phòng khám được trang trí vui nhộn, giúp bé không còn sợ bác sĩ.</p>
             <p>Bao gồm: Nhổ răng sữa không đau, trám răng Sealant ngừa sâu răng, bôi vecni flour.</p>
@@ -48,7 +48,7 @@ const serviceData = {
     },
     "veneer": {
         title: "Bọc Răng Sứ Thẩm Mỹ",
-        img: "images/service5.jpg",
+        img: "https://i.postimg.cc/HksKjgnq/dentist-examining-female-patient-with-teeth-shades.jpg",
         desc: `
             <p>Khắc phục tình trạng răng nhiễm màu, sứt mẻ hoặc thưa nhẹ. Răng sứ chính hãng nhập khẩu từ Đức, Mỹ.</p>
             <p>Bảo hành chính hãng 10-15 năm. Màu sắc tự nhiên như răng thật.</p>
@@ -56,7 +56,7 @@ const serviceData = {
     },
     "extraction": {
         title: "Nhổ Răng Khôn (Tiểu Phẫu)",
-        img: "images/service6.jpg",
+        img: "https://i.postimg.cc/9FX1YB2N/dentist-treats-childs-tooth-using-rubber-dam-installing-filling-tooth.jpg",
         desc: `
             <p>Sử dụng máy siêu âm Piezotome giúp tách nướu nhẹ nhàng, nhổ răng nhanh chóng, hạn chế tối đa sưng đau sau hậu phẫu.</p>
             <p>Quy trình vô trùng tuyệt đối, an toàn cho sức khỏe.</p>
@@ -64,7 +64,7 @@ const serviceData = {
     },
     "endodontics": {
         title: "Nội Nha (Điều Trị Tủy Răng)",
-        img: "images/service7.jpg", // Bạn cần cung cấp ảnh này
+        img: "https://i.postimg.cc/YqVn2Wcm/model-tooth-dentist-doctor-shows-patient-tooth-reception-dentist-s-office.jpg", // Bạn cần cung cấp ảnh này
         desc: `
             <p>Điều trị và bảo tồn răng bị tổn thương tủy, viêm nhiễm hoặc sâu răng nghiêm trọng, giúp bạn giữ lại răng thật.</p>
             <br>
@@ -78,7 +78,7 @@ const serviceData = {
     },         
     "general_dentistry": {
         title: "Nha Khoa Tổng Quát và Dự Phòng",
-        img: "images/service10.jpg", // Bạn cần cung cấp ảnh này
+        img: "https://i.postimg.cc/65Lrg4W8/R.jpg", 
         desc: `
             <p>Dịch vụ chăm sóc răng miệng định kỳ toàn diện, giúp phát hiện và điều trị sớm các vấn đề răng miệng, duy trì nụ cười khỏe mạnh.</p>
             <br>
@@ -93,7 +93,7 @@ const serviceData = {
     },
     "removable_dentures": {
         title: "Răng Giả Tháo Lắp",
-        img: "images/service11.jpg", // Bạn cần cung cấp ảnh này
+        img: "https://i.postimg.cc/qMfw9d23/Removable-Dentures.jpg", 
         desc: `
             <p>Giải pháp phục hình răng mất truyền thống, nhanh chóng và tiết kiệm chi phí, giúp phục hồi chức năng ăn nhai và thẩm mỹ cơ bản.</p>
             <br>
@@ -108,7 +108,7 @@ const serviceData = {
     },
     "filling": {
         title: "Trám Răng Thẩm Mỹ (Aesthetic Filling)",
-        img: "images/service8.jpg", // Bạn cần cung cấp ảnh này
+        img: "https://i.postimg.cc/jSPXs34S/dentist-hands-working-young-woman-patient-with-dental-tools.jpg", 
         desc: `
             <p>Phục hồi răng bị sứt mẻ, mòn hoặc sâu răng bằng vật liệu Composite có màu sắc giống hệt răng thật, đảm bảo tính thẩm mỹ cao.</p>
             <br>
@@ -122,7 +122,7 @@ const serviceData = {
     },
     "veneers": {
         title: "Mặt Dán Sứ Veneer",
-        img: "images/service9.jpg", // Bạn cần cung cấp ảnh này
+        img: "https://i.postimg.cc/vBN975tt/dentist-examining-female-patient-with-tools.jpg", 
         desc: `
             <p>Sử dụng mặt dán sứ siêu mỏng (0.2 - 0.5mm) để cải thiện hình thể, màu sắc và kẽ hở giữa các răng mà không cần mài răng nhiều.</p>
             <br>
@@ -133,7 +133,22 @@ const serviceData = {
                 <li> Độ bền cao, chịu lực tốt.</li>
             </ul>
         `
+    },
+    "Gingivectomy": {
+        title: "Điều Trị Cười Hở Lợi",
+        img: "https://i.postimg.cc/Rh1SCBhX/assistant-dentist-patient-clinic.jpg", 
+        desc: `
+            <p>Khắc phục tình trạng nướu bao phủ quá nhiều thân răng, giúp cân đối tỷ lệ giữa răng và nướu, tạo nên nụ cười chuẩn tỷ lệ vàng mà không gây đau đớn.</p>
+            <br>
+            <strong>Đặc điểm:</strong>
+            <ul>
+                <li> Sử dụng công nghệ Laser thế hệ mới cắt nướu chính xác, không gây chảy máu.</li>
+                <li> Thiết kế nụ cười riêng biệt, màu sắc tự nhiên, trong suốt.</li>
+                <li> Độ bền cao, chịu lực tốt.</li>
+            </ul>
+        `
     }
+    
 };
 
 document.addEventListener('DOMContentLoaded', function() {

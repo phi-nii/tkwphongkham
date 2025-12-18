@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "5 Cách Chăm Sóc Răng Miệng Tại Nhà Giúp Bảo Vệ Nụ Cười",
             date: "10/12/2023",
             author: "Bs. Tuấn",
-            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Dental+Care",
+            image: "https://i.postimg.cc/cCJWW8pb/General-Dentistry-1.jpg",
 
             content: `
             <p>
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
 
             <div class="detail-image-inline">
-                <img src="https://via.placeholder.com/800x400/E64A19/ffffff?text=Oral+Health" alt="">
+                <img src="https://i.postimg.cc/CM8XZ77w/Art-Dentistry.jpg" alt="">
                 <span>Chăm sóc răng miệng đúng cách giúp ngăn ngừa nhiều bệnh lý nha khoa</span>
             </div>
 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Ưu Đãi Tháng 12: Giảm 20% Dịch Vụ Cạo Vôi Răng",
             date: "08/12/2023",
             author: "Admin",
-            image: "https://via.placeholder.com/900x450/E64A19/ffffff?text=Dental+Promotion",
+            image: "https://i.postimg.cc/Gp0spchP/Cosmetic-Dentistry-in-Albuquerque-NM.jpg",
 
             content: `
             <p>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
 
             <div class="detail-image-inline">
-                <img src="https://via.placeholder.com/800x400/0056b3/ffffff?text=Scaling" alt="">
+                <img src="https://i.postimg.cc/bN7vxmc8/stunning-solutions-with-cosmetic-dentistry.jpg" alt="">
                 <span>Cạo vôi răng định kỳ giúp bảo vệ nướu và men răng</span>
             </div>
 
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Niềng Răng Trong Suốt: Giải Pháp Chỉnh Nha Hiện Đại",
             date: "05/12/2023",
             author: "Bs. Lan",
-            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Invisible+Braces",
+            image: "https://i.postimg.cc/44M4GW3V/R-(1).jpg",
 
             content: `
             <p>
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
 
             <div class="detail-image-inline">
-                <img src="https://via.placeholder.com/800x400/E64A19/ffffff?text=Orthodontic" alt="">
+                <img src="https://i.postimg.cc/qBCqzPSF/Invsalign-Brisbane-Wavell-Heights-Clayfield-Sure-Dental.jpg" alt="">
                 <span>Niềng răng trong suốt mang lại tính thẩm mỹ cao</span>
             </div>
 
