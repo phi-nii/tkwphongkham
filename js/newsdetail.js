@@ -151,14 +151,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Điền tiêu đề
         document.getElementById("detail-title").innerText = newsData[id].title;
 
-        // --- ĐÃ SỬA LẠI ĐOẠN NÀY ĐỂ HIỆN ICON ---
+
         // Dùng innerHTML và thêm thẻ <i class="..."> vào trước ngày tháng/tên tác giả
         document.getElementById("detail-date").innerHTML = `<i class="far fa-calendar-alt"></i> ${newsData[id].date}`;
         document.getElementById("detail-author").innerHTML = `<i class="far fa-user"></i> ${newsData[id].author}`;
 
-        // --- ĐÃ SỬA LẠI ĐOẠN NÀY ĐỂ HIỆN ẢNH ---
+      
         // Đổi 'detail-image' thành 'detail-img' cho khớp với HTML
-        // Và thêm style.display = 'block' để hiện ảnh lên (vì mặc định trong HTML đang ẩn)
+        // Thêm style.display = 'block' để hiện ảnh lên (vì mặc định trong HTML đang ẩn)
         const imgElement = document.getElementById("detail-img");
         if(imgElement) {
             imgElement.src = newsData[id].image;
