@@ -1,5 +1,4 @@
 
-/* Intro */
 .about-intro {
     text-align: center;
     margin: 50px auto;
@@ -210,17 +209,14 @@ h2, h3, .core-value .title, .achievement-item .number, .achievements-title,
   overflow: hidden;
 }
 
-/* Loại bỏ hiệu ứng Fade cho SECTION 1 */
 .image-box::before {
   content: none; 
 }
 
-/* Loại bỏ hiệu ứng Fade cho SECTION 2  */
 .image-box.right-fade::before {
   content: none; 
 }
 
-/* CSS cho SECTION 2 */
 .service .text-box h2, .service .text-box h3 {
     color: white !important;
 }
@@ -230,14 +226,12 @@ h2 {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 10px;
-  font-family: 'Roboto', sans-serif;
 }
 
 h3 {
   font-size: 23px;
   margin-bottom: 20px;
   font-weight: 600;
-   font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -300,7 +294,6 @@ color: white !important;
   display: flex;
   align-items: center;
 }
-
 
 .core-value .title {
   margin: 0;
