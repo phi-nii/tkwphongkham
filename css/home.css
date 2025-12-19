@@ -166,7 +166,7 @@ body {
 .doctor-image-wrapper {
     position: relative;
     overflow: hidden;
-    padding-top: 133.33%; 
+    height: 300px; 
 }
 
 .doctor-image {
