@@ -1,235 +1,621 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Phòng Khám Nha Khoa Dental Care</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@800&family=Quicksand:wght@700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-                <!-- MODAL THÔNG TIN BÁC SĨ -->
-<div id="doctorModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="modal-close" onclick="closeDoctorModal()">&times;</span>
 
-        <div class="modal-header">
-            <img id="modalDoctorImage" src="" alt="Doctor Image">
-            <div class="modal-header-info">
-                <h2 id="modalDoctorName"></h2>
-                <p id="modalDoctorHospital"></p>
-                <p id="modalDoctorDegree"></p>
-            </div>
-        </div>
+/* 1. SLIDESHOW & WELCOME   */
 
-        <div class="modal-body">
-            <h3>Giới thiệu</h3>
-            <p id="modalDoctorBiography"></p>
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
 
-            <h3>Quá trình công tác</h3>
-            <ul id="modalWorkHistory"></ul>
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
 
-            <h3>Đào tạo & Chứng chỉ</h3>
-            <ul id="modalTraining"></ul>
-        </div>
-    </div>
-</div>
-    <header>
-        
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
 
-        <div class="container navbar-inner">
-            <a href="index.html" class="logo">
-                <h1>Dental <span>Care</span></h1>
-            </a>
-            
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="about.html">Giới Thiệu</a></li>
-                    <li><a href="services.html">Dịch Vụ</a></li>
-                    <li><a href="news.html">Tin Tức</a></li>
-                    <li><a href="contact.html">Liên Hệ</a></li>
-                    <li><a href="contact.html" class="btn-header-booking">Đặt Lịch Ngay</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+.slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    filter: brightness(0.8);
+}
 
-    <main>
-       <section class="banner-slider">
-    <div class="slide active">
-        <img src="https://i.postimg.cc/tTX0pgT1/professional-dentist-tools-dental-office.jpg" alt="Banner 1">
-        <div class="caption">
-            <div class="caption-title">Trải Nghiệm Nha Khoa Vượt Trội</div>
-            <div class="caption-subtitle">Sử dụng các thiết bị tiên tiến nhất để mang lại sự chính xác và thoải mái tối đa.</div>
-            <a href="contact.html" class="btn-banner-cta">Đặt Lịch Hẹn Ngay</a>
-        </div>
-    </div>
-    
-    <div class="slide">
-        <img src="https://i.postimg.cc/QM3wJMcW/portrait-young-happy-woman-orange-jamper-touches-her-clear-glowing-skin-has-beautiful-white-sm.jpg" alt="Banner 2"> 
-        <div class="caption">
-            <div class="caption-title">Kích hoạt Nụ Cười Mới</div>
-            <div class="caption-subtitle">Kiểm tra ngay quyền lợi nha khoa miễn phí hoặc ưu đãi của bạn trước khi chúng hết hạn.</div>
-            <a href="services.html" class="btn-banner-cta">Xem Dịch Vụ</a>
-        </div>
-    </div>
-    
-    <button class="prev-btn">&#10094;</button>
-    <button class="next-btn">&#10095;</button>
-</section>
+.caption {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: white;
+    z-index: 5;
+    max-width: 900px;
+    padding: 0 20px;
+}
 
-     <section class="container welcome-text-header">
-            <h2 class="section-title">Chào mừng đến với Dental Care</h2>
-        </section>
+/* 2. WELCOME BANNER IMAGE */
 
-        <section class="welcome-banner-container">
-            <img src="https://i.postimg.cc/bJXfGjR3/young-woman-visiting-dentist.jpg" alt="Phòng khám nha khoa" class="welcome-banner-image">
-        </section>
-        
-        <section class="container welcome-text-body">
-            <p>Tại Dental Care, chúng tôi mang đến dịch vụ nha khoa toàn diện, được thực hiện bởi đội ngũ bác sĩ chuyên khoa giàu kinh nghiệm và sự hỗ trợ của trang thiết bị hiện đại hàng đầu.</p>
-        </section>
-<section class="section-services">
-    <div class="container services-grid-wrapper">
-        <h2 class="section-title">Dịch vụ chuyên sâu</h2>
-        <div class="services-grid">
-            
-            <a href="services.html#veneer" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M479.7 200.7l-73.9-74a48 48 0 0 0-33.9-14H144a48 48 0 0 0-48 48v239a48 48 0 0 0 48 48h227.8c13.7 0 26.9-5.5 36.6-15.2l73.9-74a48 48 0 0 0 14-33.9v-138a48 48 0 0 0-14-33.9zM425 240.2c-15.6 15.6-39 15.6-54.6 0l-58.4-58.4c-15.6-15.6-15.6-39 0-54.6l58.4-58.4c15.6-15.6 39-15.6 54.6 0l58.4 58.4c15.6 15.6 15.6 39 0 54.6l-58.4 58.4z"/></svg>
-                <p>Tẩy Trắng Răng</p>
-            </a>
-
-            <a href="services.html#braces" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M480 256c0 123.7-100.3 224-224 224S32 379.7 32 256 132.3 32 256 32s224 100.3 224 224zM320 384c-35.3 0-64-28.7-64-64h128c0 35.3-28.7 64-64 64zM192 320c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64h128c0-35.3 28.7-64 64-64s64 28.7 64 64h-128zM320 192c0 35.3-28.7 64-64 64s-64-28.7-64-64 28.7-64 64-64h128c0-35.3 28.7-64 64-64s64 28.7 64 64h-128z"/></svg>
-                <p>Niềng Răng Thẩm Mỹ</p>
-            </a>
-
-            <a href="services.html#whitening" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M256 64a192 192 0 1 0 192 192A192.1 192.1 0 0 0 256 64zm0 352a160 160 0 1 1 160-160A160.2 160.2 0 0 1 256 416zM320 224h-32v-64h-64v64h-32v32h32v64h64v-64h32z"/></svg>
-                <p>Cấy Ghép Implant</p>
-            </a>
-
-            <a href="services.html#kids" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M256 224a96 96 0 1 0-96-96 96 96 0 0 0 96 96zm-64 160c0-12.8 10.8-23.2 24-23.2h80c13.2 0 24 10.4 24 23.2v64H192zm-96-64c0 141.4 114.6 256 256 256s256-114.6 256-256S397.4-32 256-32 0 82.6 0 224zm128 0a128 128 0 1 1 128 128 128 128 0 0 1-128-128z"/></svg>
-                <p>Nha Khoa Trẻ Em</p>
-            </a>
-
-            <a href="services.html#implant" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M488 64l-96-96v416h64V128h32l16-16-16-16h-32V32h-64v480h128V96h-32zM288 320h-64v-64h-64V192h64v-64h64v64h64v64h-64z"/></svg>
-                <p>Bọc Răng Sứ</p>
-            </a>
-
-            <a href="services.html#braces" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M480 224H32v64h448zM480 320H32v64h448zM480 128H32v64h448z"/></svg>
-                <p>Nhổ Răng Khôn</p>
-            </a>
-
-            <a href="services.html" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M448 256c0 141.4-114.6 256-256 256S-64 397.4-64 256 50.6 0 192 0s256 114.6 256 256zm-96 0c0-6.6-5.4-12-12-12s-12 5.4-12 12 5.4 12 12 12 12-5.4 12-12zM192 128c0-35.3 28.7-64 64-64s64 28.7 64 64h-128zM320 384c0-35.3-28.7-64-64-64s-64 28.7-64 64h128z"/></svg>
-                <p>Nội nha</p>
-            </a>
-
-            <a href="services.html" class="service-item outline-icon">
-                <svg viewBox="0 0 512 512"><path d="M480 320H32v64h448zM480 128H32v64h448zM416 416H96v64h320zM416 32H96v64h320z"/></svg>
-                <p>Trám răng thẩm mỹ</p>
-            </a>
-            
-        </div>
-        <a href="services.html" class="btn-service-more">View more</a>
-    </div>
-</section>
-        <section class="section-doctors">
-            <div class="container welcome-text-centered">
-                <h2 class="section-title">Đội Ngũ Chuyên Gia</h2>
+.welcome-banner-image {
+    max-width: 800px; 
+    height: auto;
+    margin: 20px auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    display: block; 
+}
 
 
-    <div class="doctor-list-container">
+.welcome-text-centered { 
+    text-align: center; 
+    padding: 40px 0; 
+}
+
+.caption-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Tiêu đề phụ */
+.caption-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Nút CTA trong Banner */
+.btn-banner-cta {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.btn-banner-cta:hover {
+    background-color: #E64A19; 
+}
 
 
-        <div class="doctor-grid">
+.prev-btn, .next-btn {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); 
+    color: white; 
+    border: none;
+    padding: 15px; 
+    cursor: pointer; 
+    font-size: 18px; 
+    z-index: 10;
+    transition: background 0.3s;
+}
+.next-btn { right: 0; }
+.prev-btn { left: 0; }
+.prev-btn:hover, .next-btn:hover { background: rgba(0,0,0,0.8); }
 
-<div class="doctor-card">
-    <div class="doctor-image-wrapper">
-        <img src="https://i.postimg.cc/tJmNSRXJ/asian-doctor-smiling-isolated-white-127345-48.jpg" alt="Ảnh Bác Sĩ Trần Văn Thuận" class="doctor-image">
-        <button class="view-more-btn" onclick="openDoctorModal('thuan')">Xem thêm</button>
-        <div class="fade-overlay"></div>
-    </div>
-    <div class="doctor-info">
-        <h3 class="doctor-name">BS.CKII. Trần Văn Thuận</h3>
-        <p class="doctor-degree">Chuyên môn - Trưởng khoa Cấy ghép Implant</p>
-    </div>
-</div>
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .caption-title { 
+        font-size: 36px; 
+    }
+    .caption-subtitle { 
+        font-size: 16px; 
+    }
+}
 
-            <div class="doctor-card">
-                <div class="doctor-image-wrapper">
-                    <img src="https://i.postimg.cc/qRvKPfDQ/depositphotos-28097505-stock-photo-happy-senior-chief-doctor-offering.jpg" alt="Ảnh Bác Sĩ Trần Minh Nghĩa" class="doctor-image">
-                     <button class="view-more-btn" onclick="openDoctorModal('nghia')">Xem thêm</button>
-                    <div class="fade-overlay"></div>
-                </div>
-                <div class="doctor-info">
-                    <h3 class="doctor-name">ThS.BS. Trần Minh Nghĩa</h3>
-                    <p class="doctor-degree">Phó Giám đốc Chuyên môn</p>
-                </div>
-            </div>
 
-            <div class="doctor-card">
-                <div class="doctor-image-wrapper">
-                    <img src="https://i.postimg.cc/kXy2mJzj/asian-female-doctor-physician-medical-uniform-with-stethoscope-cross-arms-chest-smiling-looking-like.jpg" alt="Ảnh Bác Sĩ Mai Thị Hương Lan" class="doctor-image">
-                     <button class="view-more-btn" onclick="openDoctorModal('lan')">Xem thêm</button>
-                    <div class="fade-overlay"></div>
-                </div>
-                <div class="doctor-info">
-                    <h3 class="doctor-name">BS.CKI. Nội trú Mai Thị Hương Lan</h3>
-                    <p class="doctor-degree">Trưởng khoa Tổng quát & Trám răng</p>
-                </div>
-            </div>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0; 
 
-            <div class="doctor-card">
-                <div class="doctor-image-wrapper">
-                    <img src="https://i.postimg.cc/XYG6gxfq/pexels-shkrabaanthony-6749777.png" alt="Ảnh Bác Sĩ Lã Thị Thanh Ngân" class="doctor-image">
-                     <button class="view-more-btn" onclick="openDoctorModal('ngan')">Xem thêm</button>
-                    <div class="fade-overlay"></div>
-                </div>
-                <div class="doctor-info">
-                    <h3 class="doctor-name">BS.CKI. Lã Thị Thanh Ngân</h3>
-                    <p class="doctor-degree">Trưởng khoa Răng trẻ em & Nha khoa Dự phòng</p>
-                </div>
-            </div>
-        </div>
+}
 
-       <div class="action-buttons">
-            <a href="contact.html" class="btn primary-btn">Đặt lịch hẹn <i class="fas fa-arrow-right"></i></a> 
-            
-            <a href="about.html" class="btn secondary-btn">Tất cả bác sĩ <i class="fas fa-arrow-right"></i></a> 
-        </div>
-    </div>
-    </div>
-        </section>
+.doctor-list-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; 
+}
 
-        <section class="section-promo">
-            <div class="container">
-                <img class="wide-image" src="https://i.postimg.cc/Z5YJF2sh/R-(2).jpg" alt="Khuyến mãi">
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-                <div class="content-block">
-                    <h2>Ưu Đãi Tháng 12</h2>
-                    <p class="promo-highlight">GIẢM 20% CẠO VÔI RĂNG</p>
-                    <p>Dành riêng cho khách hàng đặt lịch online lần đầu tiên.</p>
-                    <a href="contact.html" class="btn-book-now">Đặt Lịch Ngay</a>
-                </div>
-            </div>
-        </section>
-    </main>
+.section-header p {
+    font-size: 1.1em;
+    color: #555;
+}
 
-    <footer id="main-footer"></footer>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/home.js"></script>
-</body>
-</html>
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Thẻ Bác sĩ */
+
+.doctor-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 133.33%; 
+}
+
+.doctor-image {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* HIỆU ỨNG: Hover Zoom */
+.doctor-card:hover .doctor-image {
+    transform: scale(1.05);
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; 
+}
+
+
+.doctor-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.doctor-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.doctor-degree {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.view-more-btn {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 20px;
+    background-color: #0056b3 ; 
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.doctor-card:hover .view-more-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px); 
+}
+
+/* Phần Nút Hành Động */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn i {
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.primary-btn {
+    background-color:  #0056b3; 
+    color: white;
+    border: 2px solid  #0056b3;
+}
+
+.primary-btn:hover {
+    background-color:  #0056b3;
+    border-color:  #0056b3;
+}
+
+.secondary-btn {
+    background-color: white;
+    color:  #0056b3;
+    border: 2px solid #0056b3;
+}
+
+.secondary-btn:hover {
+    background-color: #e9f5ff;
+    color: #0056b3;
+}
+
+
+.btn:hover i {
+    transform: translateX(3px);
+}
+
+.welcome-text-header {
+    text-align: center; 
+    padding-top: 50px;
+    padding-bottom: 20px; 
+}
+
+.welcome-text-body {
+    text-align: center; 
+    padding-top: 20px; 
+    padding-bottom: 50px; 
+}
+
+.welcome-text-header h2, .welcome-text-body p {
+    text-align: center;
+    color: #0056b3; 
+    max-width: 800px;
+    margin: 15px auto 0 auto;
+}
+
+
+.welcome-banner-container {
+    width: 100%; 
+    max-width: 1200%;
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+.welcome-banner-image {
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.welcome-text-centered h2 {
+    text-align: center;
+    color: #0056b3; 
+}
+
+/* Căn giữa đoạn văn */
+.welcome-text-centered p {
+    max-width: 800px; 
+    margin: 15px auto 0 auto; 
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-header img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-header-info h2 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+.modal-body h3 {
+    margin-top: 20px;
+    color:  #0056b3;
+}
+
+.modal-body ul {
+    padding-left: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nút Xem Chi Tiết Đội Ngũ */
+.btn-doctor-detail {
+    display: inline-block;
+    border: 2px solid #0056b3; 
+    color: #0056b3;
+    padding: 10px 25px;
+    margin-top: 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.btn-doctor-detail:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.section-services-highlight, .section-promo {
+    background-color: white; 
+    padding: 60px 0;
+    text-align: center;
+}
+
+.wide-image {
+    width: 90%;
+    max-width: 1200px;
+    height: 400px; 
+    object-fit: cover;
+    margin: 0 auto 30px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+
+.section-services-highlight h2 {
+    color: #0056b3; 
+}
+
+.btn-main-accent {
+    display: inline-block;
+    background: #0056b3; 
+    color: white;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid #0056b3;
+    transition: all 0.3s;
+}
+
+.btn-main-accent:hover {
+    background: white;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+}
+
+.section-promo h2, .section-promo .promo-highlight {
+    color: #ee7f6d;
+}
+
+.btn-book-now {
+    display: inline-block;
+    background: #ee7f6d; 
+    color: white;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid #ee7f6d;
+    transition: all 0.3s;
+}
+.btn-book-now:hover {
+    background: white;
+    color: #ee7f6d;
+    border: 2px solid #ee7f6d;
+}
+
+.service-item i,
+.service-item svg {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    height: 3rem; 
+    width: 3rem; 
+}
+
+
+.service-item svg {
+    fill: none; 
+    stroke: #0056b3; 
+    stroke-width: 20; 
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s ease;
+    display: block;
+    margin: 0 auto 10px auto; 
+}
+
+.service-item i {
+    color: #0056b3; 
+}
+
+
+.service-item:hover svg {
+    stroke: #E64A19;
+}
+
+.service-item:hover p {
+    color: #E64A19;
+}
+
+
+.section-services .section-title {
+    color: #0056b3; 
+}
+
+
+.section-services {
+    background-color: #b7c7e0; 
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+.section-services .section-title {
+    color: #0056b3; 
+}
+
+.btn-service-more {
+    background-color: #0056b3;
+   
+}
+.section-services {
+    background-color: #b7c7e0; 
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+}
+
+.service-item {
+    background-color: white;
+    padding: 25px 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: #E64A19; 
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-weight: 600;
+    color: #0056b3;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-service-more {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.btn-service-more:hover {
+    background-color: #004494;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .news-card {
+        min-width: calc(100% / 2); 
+    }
+}
+@media (max-width: 768px) {
+    .caption-title { font-size: 36px; }
+    .caption-subtitle { font-size: 16px; }
+
+    .doctor-grid {
+        grid-template-columns: 1fr; 
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .news-card {
+        min-width: 100%; 
+    }
+    .news-controls {
+        justify-content: center;
+    }
+}
