@@ -1,15 +1,11 @@
 $(document).ready(function() {
-    /* ========================================== */
-    /* 1. LOGIC CHO BANNER SLIDESHOW (jQuery)     */
-    /* ========================================== */
-    
-    // Lấy danh sách các slide
+    /* 1.BANNER SLIDESHOW */   
     const slides = $('.slide');
     const totalSlides = slides.length;
     let currentSlide = 0;
     let autoSlideInterval;
 
-    // Kiểm tra xem trang có slider không (để tránh lỗi nếu dùng file này cho trang khác)
+    // Kiểm tra xem trang có slider không 
     if (totalSlides > 0) {
         
 function showSlide(index) {
@@ -21,33 +17,33 @@ function showSlide(index) {
 
         // Hàm bắt đầu chạy tự động
         function startAutoSlide() {
-            // Xóa interval cũ nếu có để tránh chạy chồng chéo
+           
             if (autoSlideInterval) clearInterval(autoSlideInterval);
             
             autoSlideInterval = setInterval(function() {
                 // Tăng index, nếu hết thì quay về 0
                 let nextSlide = (currentSlide + 1) % totalSlides;
                 showSlide(nextSlide);
-            }, 6000); // 4000ms = 8 giây chuyển 1 lần
+            }, 6000);
         }
 
-        // --- XỬ LÝ SỰ KIỆN CLICK NÚT ---
+  
 
-        // 1. Nút Next (Tiếp theo)
+        // 1. Nút Next
         $('.next-btn').click(function() {
-            clearInterval(autoSlideInterval); // Tạm dừng tự động
+            clearInterval(autoSlideInterval); 
             let nextSlide = (currentSlide + 1) % totalSlides;
             showSlide(nextSlide);
-            startAutoSlide(); // Khởi động lại tự động
+            startAutoSlide(); 
         });
 
-        // 2. Nút Prev (Lùi lại)
+        // 2. Nút Prev 
         $('.prev-btn').click(function() {
-            clearInterval(autoSlideInterval); // Tạm dừng tự động
-            // Công thức lùi vòng tròn (nếu về âm thì nhảy xuống cuối)
+            clearInterval(autoSlideInterval);
+
             let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             showSlide(prevSlide);
-            startAutoSlide(); // Khởi động lại tự động
+            startAutoSlide(); 
         });
 
         // Khởi tạo trạng thái ban đầu
@@ -57,23 +53,22 @@ slides.eq(0).addClass('active');
         startAutoSlide();
     }
 
-    /* ========================================== */
-    /* 2. HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION)  */
-    /* ========================================== */
+   
+    /* 2. HIỆU ỨNG CUỘN TRANG  */
+
     $(window).scroll(function() {
         // Tính vị trí cuộn hiện tại + chiều cao cửa sổ - 1 khoảng offset
         var scrollPos = $(window).scrollTop() + $(window).height() - 150; 
-        
-        // Duyệt qua các section cần hiệu ứng
+
         $('.section-doctors, .section-services-highlight, .section-promo').each(function() {
-            // Nếu vị trí cuộn > vị trí của phần tử -> Thêm class hiện ra
+       
             if (scrollPos > $(this).offset().top) {
                 $(this).addClass('is-visible'); 
             }
         });
     });
 });
-// Dữ liệu chi tiết cho từng bác sĩ (Đã được cập nhật dữ liệu Nha khoa cho BS Thuận)
+// Dữ liệu chi tiết cho từng bác sĩ
 const doctorsData = {
     'thuan': {
         name: 'BS.CKII. Trần Văn Thuận',
@@ -139,10 +134,10 @@ const doctorsData = {
     }
 };
 
-// Sử dụng jQuery để chờ tài liệu được tải xong
+
 $(document).ready(function() {
 
-    // Lấy các phần tử trong Modal bằng jQuery (dùng selector ID)
+
     const $doctorModal = $('#doctorModal');
     const $modalDoctorName = $('#modalDoctorName');
     const $modalDoctorHospital = $('#modalDoctorHospital');
@@ -154,17 +149,17 @@ $(document).ready(function() {
 
 
     function renderList(ulElement, dataArray) {
-        ulElement.empty(); // Xóa nội dung cũ bằng jQuery
+        ulElement.empty(); 
         if (dataArray) {
             dataArray.forEach(item => {
-                const li = $('<li>').text(item); // Tạo thẻ li bằng jQuery
-                ulElement.append(li); // Thêm vào ul
+                const li = $('<li>').text(item); 
+                ulElement.append(li); 
             });
         }
     }
 
     // Hàm mở Modal Bác sĩ
-    // *Lưu ý: Hàm này vẫn giữ nguyên tên để tương thích với onclick="openDoctorModal('id')" trong HTML
+    // 
     window.openDoctorModal = function(doctorId) {
         const doctor = doctorsData[doctorId];
         
@@ -173,7 +168,7 @@ $(document).ready(function() {
             $modalDoctorName.text(doctor.name);
             $modalDoctorHospital.text(doctor.hospital);
             $modalDoctorDegree.text(doctor.degree);
-            $modalDoctorImage.attr('src', doctor.image); // Cập nhật thuộc tính src
+            $modalDoctorImage.attr('src', doctor.image); 
             $modalDoctorBiography.text(doctor.biography);
 
             // 2. Cập nhật danh sách
@@ -181,21 +176,19 @@ $(document).ready(function() {
             renderList($modalTraining, doctor.training);
             
             // 3. Hiển thị Modal
-            $doctorModal.addClass('show'); // Thêm class 'show'
-            $('body').css('overflow', 'hidden'); // Ngăn cuộn trang chính
+            $doctorModal.addClass('show'); 
+            $('body').css('overflow', 'hidden'); 
         }
     }
 
     // Hàm đóng Modal Bác sĩ
-    // *Lưu ý: Hàm này vẫn giữ nguyên tên để tương thích với onclick="closeDoctorModal()" trong HTML
+    
     window.closeDoctorModal = function() {
-        $doctorModal.removeClass('show'); // Xóa class 'show'
+        $doctorModal.removeClass('show');
         $('body').css('overflow', 'auto'); 
     }
 
-    // Đóng Modal khi click vào nút đóng (đã được xử lý bằng onclick trong HTML)
-    
-    // Đóng Modal khi click ra ngoài (trên overlay) - Sử dụng event delegation
+    // Đóng Modal khi click ra ngoài - Sử dụng event delegation
     $doctorModal.on('click', function(event) {
         // Kiểm tra xem phần tử được click có phải là chính modal overlay không
         if (event.target === this) {
